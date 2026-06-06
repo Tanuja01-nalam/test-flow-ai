@@ -1,23 +1,20 @@
-# 🤖 AI-Powered Testing Gateway
-
 <div align="center">
+
+# 🤖 AI-Powered Testing Gateway
 
 **The world's first Testing-as-a-Service Gateway powered by AI**
 
 *Subscribe → Submit your App URL → AI Tests Everything → Get Full Report*
 
-[![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge)]()
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)]()
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)]()
-[![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)]()
-[![Claude AI](https://img.shields.io/badge/Claude_AI-CC785C?style=for-the-badge&logo=anthropic&logoColor=white)]()
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)]()
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)]()
-[![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)]()
-[![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)]()
-
-</div>
-<div align="center">
+[![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge)](https://github.com/Tanuja01-nalam/test-flow-ai)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://github.com/Tanuja01-nalam/test-flow-ai)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://github.com/Tanuja01-nalam/test-flow-ai)
+[![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)](https://github.com/Tanuja01-nalam/test-flow-ai)
+[![Claude AI](https://img.shields.io/badge/Claude_AI-CC785C?style=for-the-badge&logo=anthropic&logoColor=white)](https://github.com/Tanuja01-nalam/test-flow-ai)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://github.com/Tanuja01-nalam/test-flow-ai)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://github.com/Tanuja01-nalam/test-flow-ai)
+[![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://github.com/Tanuja01-nalam/test-flow-ai)
+[![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonwebservices&logoColor=white)](https://github.com/Tanuja01-nalam/test-flow-ai)
 
 [![Live Demo](https://img.shields.io/badge/🚀_Visit_Live_Demo-2563EB?style=for-the-badge)](https://aitestgateway.netlify.app/)
 
@@ -60,7 +57,6 @@ A secure **Testing-as-a-Service Gateway** where:
 
 ┌─────────────────────────────────────────────────────────────────────┐
 │  LAYER 1 — USER                                                     │
-│                                                                     │
 │                    ┌──────────────────┐                             │
 │                    │   Company / User  │                             │
 │                    │   (Customer)      │                             │
@@ -70,11 +66,9 @@ A secure **Testing-as-a-Service Gateway** where:
                               ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │  LAYER 2 — FRONTEND (PRESENTATION LAYER)                            │
-│                                                                     │
 │              ┌──────────────────────────────────┐                  │
 │              │        Web Dashboard              │                  │
 │              │       React / Next.js             │                  │
-│              │                                   │                  │
 │              │  ● Login / Register               │                  │
 │              │  ● API Key Management             │                  │
 │              │  ● Submit Application URL         │                  │
@@ -86,88 +80,65 @@ A secure **Testing-as-a-Service Gateway** where:
                               ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │  LAYER 3 — API GATEWAY (BUSINESS LAYER)                             │
-│                                                                     │
 │         ┌────────────────────────────────────────────┐             │
 │         │            API Gateway                      │             │
-│         │         Node.js / Express                   │             │
-│         │                                             │──────────▶ PostgreSQL │
-│         │  ● API Key Validation                       │             │
-│         │  ● Authentication (JWT)                     │──────────▶ Redis     │
-│         │  ● Subscription Check                       │            (Queue)    │
-│         │  ● Rate Limiting                            │             │
-│         │  ● Request Validation                       │             │
+│         │         Node.js / Express                   │──────────▶ PostgreSQL
+│         │  ● API Key Validation                       │──────────▶ Redis (Queue)
+│         │  ● Authentication (JWT)                     │             │
+│         │  ● Subscription Check & Rate Limiting       │             │
 │         │  ● Add Job to Queue                         │             │
 │         └──────────────────┬──────────────────────────┘             │
 └─────────────────────────────┼───────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│  LAYER 4 — JOB ORCHESTRATOR (SERVICE LAYER)                         │
-│                                                                     │
+│  LAYER 4 — JOB ORCHESTRATOR                                         │
 │              ┌──────────────────────────────────┐                  │
-│              │        Job Orchestrator           │                  │
-│              │                                   │                  │
 │              │  ● Pick Job from Queue            │                  │
-│              │  ● Create Isolated Environment    │                  │
+│              │  ● Create Isolated Docker Env     │                  │
 │              │  ● Manage Execution Flow          │                  │
-│              │  ● Update Job Status              │                  │
 │              └──────────────┬───────────────────┘                  │
 └─────────────────────────────┼───────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │  LAYER 5 — EXECUTION ENVIRONMENT                                    │
-│                                                                     │
 │              ┌──────────────────────────────────┐                  │
 │              │      Docker Container             │                  │
-│              │      (Per Test Run)               │                  │
-│              │                                   │                  │
 │              │  ● Isolated & Secure              │                  │
-│              │  ● Playwright Installed           │                  │
-│              │  ● Chromium / Firefox / WebKit    │                  │
+│              │  ● Playwright + Chromium/Firefox  │                  │
 │              └──────────────┬───────────────────┘                  │
 └─────────────────────────────┼───────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │  LAYER 6 — AI + TESTING ENGINE                                      │
-│                                                                     │
 │    ┌──────────────────────────┐    ┌────────────────────────────┐  │
-│    │       AI Engine          │    │   Test Execution Engine    │  │
-│    │      Claude AI API       │───▶│       (Playwright)         │  │
-│    │                          │    │                            │  │
+│    │       Claude AI API      │───▶│       Playwright           │  │
 │    │  ● Extract DOM           │    │  ● Convert Test Plan       │  │
-│    │    (page.content())      │    │    → Playwright Scripts    │  │
-│    │  ● Send HTML to Claude   │    │  ● Execute Test Cases      │  │
-│    │  ● AI Understands App    │    │  ● Take Screenshots/Videos │  │
-│    │  ● Generate Test Plan    │    │  ● Capture Results & Logs  │  │
-│    │    (JSON)                │    │                            │  │
+│    │  ● Analyze App Structure │    │  ● Execute Test Cases      │  │
+│    │  ● Generate Test Plan    │    │  ● Capture Screenshots     │  │
 │    └──────────────────────────┘    └────────────────┬───────────┘  │
 └─────────────────────────────────────────────────────┼───────────────┘
                                                        │
                                                        ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │  LAYER 7 — REPORTS & STORAGE                                        │
-│                                                                     │
-│   ┌───────────────┐  ┌──────────────────┐  ┌──────────────────┐   │
-│   │  Test Results │  │  Screenshots &   │  │  HTML / PDF      │   │
-│   │    (JSON)     │  │    Videos        │  │  Reports         │   │
-│   └───────────────┘  └──────────────────┘  └──────────────────┘   │
-│                                                                     │
+│   ┌──────────────┐  ┌──────────────────┐  ┌──────────────────┐    │
+│   │ Test Results │  │  Screenshots &   │  │  HTML / PDF      │    │
+│   │   (JSON)     │  │    Videos        │  │  Reports         │    │
+│   └──────────────┘  └──────────────────┘  └──────────────────┘    │
 │                    ┌──────────────────────┐                        │
-│                    │    Cloud Storage      │                        │
-│                    │   AWS S3 / GCS        │                        │
+│                    │  AWS S3 / GCS        │                        │
 │                    └──────────────────────┘                        │
 └─────────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │  LAYER 8 — NOTIFICATION LAYER                                       │
-│                                                                     │
-│   ┌───────────────┐    ┌──────────────────┐    ┌───────────────┐  │
-│   │     Email     │    │    Webhooks       │    │ Slack / Teams │  │
-│   │ Notifications │    │                   │    │    Alerts     │  │
-│   └───────────────┘    └──────────────────┘    └───────────────┘  │
+│   ┌──────────────┐    ┌──────────────────┐    ┌───────────────┐   │
+│   │    Email     │    │    Webhooks       │    │ Slack / Teams │   │
+│   └──────────────┘    └──────────────────┘    └───────────────┘   │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -185,14 +156,13 @@ A secure **Testing-as-a-Service Gateway** where:
 └─────────┘    └─────────┘    └─────────┘    └─────────┘    └────┬────┘
                                                                    │
   STEP 9          STEP 8          STEP 7          STEP 6           │
-┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐         │
-│  User   │◀───│ Reports │◀───│Playwright│◀───│   AI    │◀────────┘
-│Receives │    │Generated│    │Executes │    │ Engine  │
-│Notificat│    │& Stored │    │ Tests & │    │Analyzes │
-│-ion &   │    │         │    │Collects │    │DOM &    │
-│Dashboard│    │         │    │ Results │    │Generate │
-│         │    │         │    │         │    │Test Plan│
-└─────────┘    └─────────┘    └─────────┘    └─────────┘
+┌─────────┐    ┌─────────┐    ┌──────────┐   ┌─────────┐         │
+│  User   │◀───│ Reports │◀───│Playwright│◀──│   AI    │◀────────┘
+│Receives │    │Generated│    │Executes  │   │ Engine  │
+│ Notif.  │    │& Stored │    │ Tests &  │   │Analyzes │
+│Dashboard│    │         │    │ Collects │   │DOM &    │
+│         │    │         │    │ Results  │   │Generate │
+└─────────┘    └─────────┘    └──────────┘   └─────────┘
 ```
 
 ---
@@ -200,53 +170,58 @@ A secure **Testing-as-a-Service Gateway** where:
 ## 🧩 Tech Stack
 
 ### Frontend
-| Technology | Purpose |
-|-----------|---------|
-| React.js | User dashboard and UI |
-| Next.js | Server-side rendering and routing |
-| Tailwind CSS | Styling |
+
+| Technology   | Purpose                           |
+| ------------ | --------------------------------- |
+| React.js     | User dashboard and UI             |
+| Next.js      | Server-side rendering and routing |
+| Tailwind CSS | Styling                           |
 
 ### Backend / Gateway
-| Technology | Purpose |
-|-----------|---------|
-| Node.js + Express | API Gateway server |
-| JWT | Authentication and API key validation |
-| Redis | Job queue management |
-| Rate Limiter | Prevent abuse and overload |
+
+| Technology        | Purpose                               |
+| ----------------- | ------------------------------------- |
+| Node.js + Express | API Gateway server                    |
+| JWT               | Authentication and API key validation |
+| Redis             | Job queue management                  |
+| Rate Limiter      | Prevent abuse and overload            |
 
 ### AI + Testing Engine
-| Technology | Purpose |
-|-----------|---------|
+
+| Technology    | Purpose                               |
+| ------------- | ------------------------------------- |
 | Claude AI API | DOM analysis and test plan generation |
-| Playwright | Browser automation and test execution |
-| Docker | Isolated container per test run |
+| Playwright    | Browser automation and test execution |
+| Docker        | Isolated container per test run       |
 
 ### Storage & Infrastructure
-| Technology | Purpose |
-|-----------|---------|
-| PostgreSQL | Users, API keys, test results |
+
+| Technology   | Purpose                          |
+| ------------ | -------------------------------- |
+| PostgreSQL   | Users, API keys, test results    |
 | AWS S3 / GCS | Screenshots, videos, PDF reports |
-| AWS / GCP | Cloud hosting and deployment |
+| AWS / GCP    | Cloud hosting and deployment     |
 
 ### Notifications
-| Technology | Purpose |
-|-----------|---------|
-| Email (SMTP) | Test completion notifications |
-| Webhooks | Real-time result delivery |
-| Slack / Teams | Team alerts |
+
+| Technology    | Purpose                       |
+| ------------- | ----------------------------- |
+| Email (SMTP)  | Test completion notifications |
+| Webhooks      | Real-time result delivery     |
+| Slack / Teams | Team alerts                   |
 
 ---
 
 ## 🔍 Market Gap Analysis
 
-| Feature | BrowserStack | Testim | Autonoma AI | **Our Gateway** |
-|---------|-------------|--------|-------------|----------------|
-| Zero Installation | ❌ | ❌ | ❌ | ✅ |
-| Just Give a URL | ❌ | ❌ | ❌ | ✅ |
-| API Key Gateway | ❌ | ❌ | ❌ | ✅ |
-| Full AI Auto-Test | ⚠️ Partial | ⚠️ Partial | ⚠️ Partial | ✅ |
-| Zero Human Input | ❌ | ❌ | ❌ | ✅ |
-| Affordable for SMEs | ❌ | ❌ | ❌ | ✅ |
+| Feature             | BrowserStack | Testim     | Autonoma AI | **Our Gateway** |
+| ------------------- | ------------ | ---------- | ----------- | --------------- |
+| Zero Installation   | ❌            | ❌          | ❌           | ✅               |
+| Just Give a URL     | ❌            | ❌          | ❌           | ✅               |
+| API Key Gateway     | ❌            | ❌          | ❌           | ✅               |
+| Full AI Auto-Test   | ⚠️ Partial   | ⚠️ Partial | ⚠️ Partial  | ✅               |
+| Zero Human Input    | ❌            | ❌          | ❌           | ✅               |
+| Affordable for SMEs | ❌            | ❌          | ❌           | ✅               |
 
 > No competitor has this exact combination. This is a genuine first-mover opportunity.
 
@@ -254,12 +229,12 @@ A secure **Testing-as-a-Service Gateway** where:
 
 ## 💼 Business Model
 
-| Plan | Price | Tests / Month | Reports | Support |
-|------|-------|--------------|---------|---------|
-| Free | $0 | 50 | Basic | Community |
-| Starter | $29/mo | 500 | PDF | Email |
-| Pro | $99/mo | 5,000 | Full Dashboard | Priority |
-| Enterprise | Custom | Unlimited | Custom | Dedicated |
+| Plan       | Price  | Tests / Month | Reports        | Support   |
+| ---------- | ------ | ------------- | -------------- | --------- |
+| Free       | $0     | 50            | Basic          | Community |
+| Starter    | $29/mo | 500           | PDF            | Email     |
+| Pro        | $99/mo | 5,000         | Full Dashboard | Priority  |
+| Enterprise | Custom | Unlimited     | Custom         | Dedicated |
 
 ---
 
@@ -330,23 +305,22 @@ Month 12    ░░░░░░░░░░░░░░░░░░░░  Public
 ```
 
 ---
-![Demo](./demo.png.png)
-## 👨‍💻 Author
 
-**Manikanta Chalasani**
-Frontend Engineer | FinTech & Trading Systems | System Design
-
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:manikantachalasani08@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/YOUR_LINKEDIN)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Manikantach03)
+![Demo](demo.png.png)
 
 ---
 
-<div align="center">
+## 👩‍💻 Author
+
+**Tanuja Nalam**
+AWS DevOps Engineer | Cloud Infrastructure | CI/CD | DevSecOps | 3× AWS Certified
+
+[![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nalamtanujaa@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tanuja-nalam)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Tanuja01-nalam)
+
+---
 
 ⭐ **If this idea excites you, give this repo a star!**
 
-*This product does not exist in the market yet.*
-*Building it one layer at a time.*
-
-</div>
+*This product does not exist in the market yet. Building it one layer at a time.*
